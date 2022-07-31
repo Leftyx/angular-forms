@@ -1,0 +1,15 @@
+<div *ngIf="userContactForm">
+  <form [formGroup]="userContactForm" (ngSubmit)="submitForm()">
+    <app-user-contact
+      *ngFor="let currentForm of forms?.controls"
+      [form]="currentForm"
+    ></app-user-contact>
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="!userContactForm.valid"
+    >
+      Submit
+    </button>
+  </form>
+</div>
